@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Intention-Aware Geometry-Guided Human Motion Prediction</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --bg: #f7f9fb;
@@ -20,18 +23,32 @@
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
       --max-width: 1100px;
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background: radial-gradient(800px at 12% 10%, rgba(27, 77, 177, 0.07), transparent 40%),
-                  radial-gradient(700px at 90% 8%, rgba(224, 122, 31, 0.06), transparent 38%),
-                  var(--bg);
+        radial-gradient(700px at 90% 8%, rgba(224, 122, 31, 0.06), transparent 38%),
+        var(--bg);
       color: var(--text);
       font-family: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
       line-height: 1.6;
     }
-    a { color: var(--accent); text-decoration: none; }
-    img { max-width: 100%; display: block; border-radius: 12px; }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
     header {
       position: sticky;
       top: 0;
@@ -40,6 +57,7 @@
       background: rgba(247, 249, 251, 0.86);
       border-bottom: 1px solid var(--border);
     }
+
     nav {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -49,16 +67,19 @@
       justify-content: space-between;
       gap: 12px;
     }
+
     .brand {
       font-weight: 700;
       letter-spacing: 0.5px;
       color: var(--primary);
     }
+
     .nav-links {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
     }
+
     .nav-links a {
       font-weight: 500;
       color: var(--muted);
@@ -66,7 +87,12 @@
       border-radius: 8px;
       transition: all 0.2s ease;
     }
-    .nav-links a:hover { color: var(--text); background: #e9eef6; }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: #e9eef6;
+    }
+
     .hero {
       max-width: var(--max-width);
       margin: 28px auto 14px;
@@ -76,7 +102,13 @@
       gap: 28px;
       align-items: center;
     }
-    .badge-row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .badge-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
     .badge {
       padding: 8px 12px;
       border-radius: 10px;
@@ -86,6 +118,7 @@
       font-weight: 600;
       font-size: 13px;
     }
+
     .hero h1 {
       margin: 10px 0 8px;
       font-size: clamp(30px, 3.6vw, 40px);
@@ -93,12 +126,20 @@
       letter-spacing: -0.2px;
       font-family: 'Merriweather', serif;
     }
+
     .hero p.lead {
       color: var(--muted);
       margin: 0 0 12px;
       font-size: 17px;
     }
-    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
     .btn {
       padding: 12px 16px;
       border-radius: 10px;
@@ -108,13 +149,19 @@
       background: var(--panel);
       transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
+
     .btn.primary {
       background: var(--primary);
       color: #fff;
       border: none;
       box-shadow: 0 8px 18px rgba(27, 77, 177, 0.22);
     }
-    .btn:hover { transform: translateY(-2px); border-color: #c7d2e3; }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: #c7d2e3;
+    }
+
     .hero-panel {
       background: var(--panel);
       border: 1px solid var(--border);
@@ -122,37 +169,59 @@
       padding: 14px;
       box-shadow: var(--shadow);
     }
+
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 12px;
       margin-top: 12px;
     }
+
     .stat {
       padding: 12px;
       background: var(--panel-2);
       border-radius: 12px;
       border: 1px solid var(--border);
     }
-    .stat .label { color: var(--muted); font-size: 13px; }
-    .stat .value { font-size: 22px; font-weight: 700; color: var(--primary); }
+
+    .stat .label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .stat .value {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
     .section {
       max-width: var(--max-width);
       margin: 32px auto;
       padding: 0 18px;
     }
+
     .section h2 {
       margin: 0 0 12px;
       font-size: 25px;
       letter-spacing: -0.15px;
       font-family: 'Merriweather', serif;
     }
-    .section p { color: var(--muted); margin: 0 0 12px; }
+
+    .section p {
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
     .grid {
       display: grid;
       gap: 16px;
     }
-    .two-col { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+    .two-col {
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    }
+
     .card {
       background: var(--panel);
       border: 1px solid var(--border);
@@ -160,8 +229,18 @@
       padding: 16px;
       box-shadow: var(--shadow);
     }
-    .card h3 { margin: 0 0 8px; }
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+
+    .card h3 {
+      margin: 0 0 8px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
     .chip {
       padding: 8px 10px;
       background: #eef2f9;
@@ -170,6 +249,7 @@
       color: var(--muted);
       font-size: 13px;
     }
+
     .highlight {
       border-left: 3px solid var(--primary);
       padding-left: 12px;
@@ -178,6 +258,7 @@
       padding-top: 8px;
       padding-bottom: 8px;
     }
+
     .table-wrap {
       overflow: auto;
       border-radius: 12px;
@@ -185,20 +266,34 @@
       background: var(--panel);
       box-shadow: var(--shadow);
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
       min-width: 500px;
       font-size: 14px;
     }
-    th, td {
+
+    th,
+    td {
       padding: 12px 10px;
       border-bottom: 1px solid var(--border);
       text-align: center;
     }
-    th { color: var(--muted); font-weight: 600; }
-    tr:last-child td { border-bottom: none; }
-    tr:hover td { background: #f6f8fb; }
+
+    th {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f6f8fb;
+    }
+
     .tag {
       background: #e9eef6;
       color: var(--text);
@@ -207,20 +302,27 @@
       font-weight: 600;
       font-size: 12px;
     }
+
     .caption {
       color: var(--muted);
       font-size: 13px;
       margin-top: 8px;
     }
+
     .math-block {
-      background: var(--panel-2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 12px;
+      background: #f2f4f8;
+      border: 1px solid #d6dde8;
+      border-radius: 12px;
+      padding: 14px 16px;
       font-family: 'Merriweather', serif;
       color: var(--text);
       overflow-x: auto;
+      text-align: center;
+      line-height: 1.5;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
     }
+    mjx-container { font-size: 120% !important; line-height: 1.6 !important; }
+
     footer {
       max-width: var(--max-width);
       margin: 32px auto 28px;
@@ -231,13 +333,33 @@
       flex-wrap: wrap;
       gap: 12px;
     }
+
     @media (max-width: 640px) {
-      nav { justify-content: center; }
-      .nav-links { justify-content: center; }
-      header { position: static; }
+      nav {
+        justify-content: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      header {
+        position: static;
+      }
     }
   </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
   <header>
     <nav>
@@ -259,7 +381,8 @@
         <span class="badge">Motion Prediction</span>
       </div>
       <h1>Intention-Aware Geometry-Guided Human Motion Prediction</h1>
-      <p class="lead">Hydrodynamics-inspired intention cues, residual GCNs, and geometry-aware attention enable real-time and physically consistent human motion prediction for collaborative robots.</p>
+      <p class="lead">Hydrodynamics-inspired intention cues, residual GCNs, and geometry-aware attention enable
+        real-time and physically consistent human motion prediction for collaborative robots.</p>
       <div class="cta-row">
         <a class="btn primary" href="#abstract">Read overview</a>
         <a class="btn" href="#results">Jump to results</a>
@@ -284,14 +407,18 @@
     </div>
     <div class="hero-panel">
       <img src="assets/img/overview.png" alt="Model overview diagram">
-      <p class="caption">Pipeline: intention prediction, human/robot GCN backbones, geometry-aware relations, and dual cross-attention for future pose synthesis.</p>
+      <p class="caption">Pipeline: intention prediction, human/robot GCN backbones, geometry-aware relations, and dual
+        cross-attention for future pose synthesis.</p>
     </div>
   </section>
 
   <section id="abstract" class="section">
     <h2>Abstract</h2>
     <p class="highlight">
-      Accurate future motion forecasts keep collaborative robots safe and helpful. We fuse hydrodynamic intention cues, articulated graph encoders, and geometry-aware attention to predict human poses conditioned on robot motion and task objects. Experiments on the CoMaD benchmarks deliver state-of-the-art accuracy and real-time inference, with successful deployment on physical manipulators.
+      Accurate future motion forecasts keep collaborative robots safe and helpful. We fuse hydrodynamic intention cues,
+      articulated graph encoders, and geometry-aware attention to predict human poses conditioned on robot motion and
+      task objects. Experiments on the CoMaD benchmarks deliver state-of-the-art accuracy and real-time inference, with
+      successful deployment on physical manipulators.
     </p>
     <div class="chips">
       <span class="chip">Intention prediction</span>
@@ -307,30 +434,33 @@
     <div class="grid two-col">
       <div class="card">
         <h3>Hydrodynamic intention field</h3>
-        <p>Hand motion generates a velocity field; candidate objects accumulate responses to yield soft intention scores, delivering continuous, interpretable cues.</p>
+        <p>Hand motion generates a velocity field; candidate objects accumulate responses to yield soft intention
+          scores, delivering continuous, interpretable cues.</p>
         <div class="math-block">
-          Δv<sub>t</sub> = (v<sub>ht</sub> S<sub>h</sub> cosθ<sub>t</sub>) / (π r<sub>t</sub><sup>2</sup>)<br>
-          v<sub>P</sub> = Σ<sub>t</sub> Δv<sub>t</sub> γ<sup>T−t</sup>, &nbsp;
-          s<sub>P<sub>i</sub></sub> = softmax(v<sub>P<sub>i</sub></sub>)
+          $$\Delta v_t = \frac{v_{ht}\, S_h \cos\theta_t}{\pi r_t^{2}}$$
+          $$v_P = \sum_t \Delta v_t \, \gamma^{T-t}, \quad s_{P_i} = \mathrm{softmax}(v_{P_i})$$
         </div>
       </div>
       <div class="card">
         <h3>Residual GCNs for human & robot</h3>
-        <p>Spatial-temporal graphs with natural, symmetric, and self connections (humans) and kinematic chains (robots) capture articulated motion with residual stacking.</p>
+        <p>Spatial-temporal graphs with natural, symmetric, and self connections (humans) and kinematic chains (robots)
+          capture articulated motion with residual stacking.</p>
         <img src="assets/img/gcn.png" alt="Residual GCN architecture">
         <p class="caption">Stacked graph convolution modules with an MLP head align input/output horizons.</p>
       </div>
       <div class="card">
         <h3>Geometry-aware attention bias</h3>
-        <p>Relative displacement, distance, and inverse-distance features feed an MLP to bias cross-attention, enforcing proximity-aware focus between agents.</p>
+        <p>Relative displacement, distance, and inverse-distance features feed an MLP to bias cross-attention, enforcing
+          proximity-aware focus between agents.</p>
         <div class="math-block">
-          g<sub>t,j</sub> = [Δ<sub>t,j</sub>, d<sub>t,j</sub>, d<sub>t,j</sub><sup>2</sup>, 1/d<sub>t,j</sub>]<br>
-          B<sub>(t,j),(t',k)</sub> = b<sub>t,j</sub> · 𝟙(t = t')
+          $$g_{t,j} = [\,\Delta_{t,j},\; d_{t,j},\; d_{t,j}^2,\; 1/d_{t,j}\,]$$
+          $$B_{(t,j),(t',k)} = b_{t,j} \cdot \mathbb{1}(t = t')$$
         </div>
       </div>
       <div class="card">
         <h3>Intention & Human–Robot cross-attention</h3>
-        <p>Human tokens attend to object tokens to inject goal semantics; a second cross-attention fuses intention-aware human and robot features using the learned bias.</p>
+        <p>Human tokens attend to object tokens to inject goal semantics; a second cross-attention fuses intention-aware
+          human and robot features using the learned bias.</p>
         <img src="assets/img/graph.png" alt="Human graph connections">
         <p class="caption">Natural, symmetric, and self connections stabilize articulated reasoning.</p>
       </div>
@@ -342,56 +472,125 @@
     <div class="grid two-col">
       <div class="card">
         <h3>1) Intention prediction</h3>
-        <p>Compute hydrodynamic responses from hand trajectories to candidate objects; produce <em>m×4</em> tensors (x, y, z, score) describing object relevance.</p>
+        <p>Compute hydrodynamic responses from hand trajectories to candidate objects; produce <em>m×4</em> tensors (x,
+          y, z, score) describing object relevance.</p>
         <img src="assets/img/flow1.png" alt="Hydrodynamic intention illustration">
         <p class="caption">Targets aligned with hand velocity gain stronger responses.</p>
       </div>
       <div class="card">
         <h3>2) Human / Robot encoders</h3>
-        <p>Residual GCNs process historical poses (human) and kinematic states (robot), retaining spatial topology across time.</p>
+        <p>Residual GCNs process historical poses (human) and kinematic states (robot), retaining spatial topology
+          across time.</p>
         <img src="assets/img/overview.png" alt="Pipeline figure">
         <p class="caption">Encoders feed relation-aware cross-attention for future pose decoding.</p>
       </div>
       <div class="card">
         <h3>3) Geometry-aware relation module</h3>
-        <p>Construct per-time-step attention biases from human–robot displacement features to reflect physical constraints and collision risk.</p>
+        <p>Construct per-time-step attention biases from human–robot displacement features to reflect physical
+          constraints and collision risk.</p>
       </div>
       <div class="card">
         <h3>4) Decoder & Losses</h3>
-        <p>Cross-attend intention-aware human tokens with robot tokens, then regress future poses. Loss blends MPJPE, short-horizon emphasis, and limb-length regularization.</p>
+        <p>Cross-attend intention-aware human tokens with robot tokens, then regress future poses. Loss blends MPJPE,
+          short-horizon emphasis, and limb-length regularization.</p>
       </div>
     </div>
   </section>
 
   <section id="results" class="section">
     <h2>Results on CoMaD Benchmarks</h2>
-    <p>Our model outperforms Zero Velocity, siMLPe, and InteRACT across human–human (H–H) and human–robot (H–R) collaboration tasks.</p>
+    <p>Our model outperforms Zero Velocity, siMLPe, and InteRACT across human–human (H–H) and human–robot (H–R)
+      collaboration tasks.</p>
     <div class="grid two-col">
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th colspan="5">H–H Final Displacement Error (mm)</th></tr>
-            <tr><th>Task</th><th>Reactive Stirring</th><th>Object Handover</th><th>Table Setting</th><th>All</th></tr>
+            <tr>
+              <th colspan="5">H–H Final Displacement Error (mm)</th>
+            </tr>
+            <tr>
+              <th>Task</th>
+              <th>Reactive Stirring</th>
+              <th>Object Handover</th>
+              <th>Table Setting</th>
+              <th>All</th>
+            </tr>
           </thead>
           <tbody>
-            <tr><td>ZV</td><td>80.6</td><td>81.0</td><td>130.1</td><td>88.8</td></tr>
-            <tr><td>siMLPe</td><td>51.9</td><td>54.6</td><td>100.7</td><td>62.0</td></tr>
-            <tr><td>InteRACT</td><td>52.4</td><td>59.3</td><td>105.6</td><td>66.1</td></tr>
-            <tr><td><span class="tag">Ours</span></td><td><b>49.2</b></td><td><b>50.9</b></td><td><b>97.1</b></td><td><b>58.7</b></td></tr>
+            <tr>
+              <td>ZV</td>
+              <td>80.6</td>
+              <td>81.0</td>
+              <td>130.1</td>
+              <td>88.8</td>
+            </tr>
+            <tr>
+              <td>siMLPe</td>
+              <td>51.9</td>
+              <td>54.6</td>
+              <td>100.7</td>
+              <td>62.0</td>
+            </tr>
+            <tr>
+              <td>InteRACT</td>
+              <td>52.4</td>
+              <td>59.3</td>
+              <td>105.6</td>
+              <td>66.1</td>
+            </tr>
+            <tr>
+              <td><span class="tag">Ours</span></td>
+              <td><b>49.2</b></td>
+              <td><b>50.9</b></td>
+              <td><b>97.1</b></td>
+              <td><b>58.7</b></td>
+            </tr>
           </tbody>
         </table>
       </div>
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th colspan="5">H–R Final Displacement Error (mm)</th></tr>
-            <tr><th>Task</th><th>Cabinet Pick</th><th>Cart Place</th><th>Tabletop Manip.</th><th>All</th></tr>
+            <tr>
+              <th colspan="5">H–R Final Displacement Error (mm)</th>
+            </tr>
+            <tr>
+              <th>Task</th>
+              <th>Cabinet Pick</th>
+              <th>Cart Place</th>
+              <th>Tabletop Manip.</th>
+              <th>All</th>
+            </tr>
           </thead>
           <tbody>
-            <tr><td>ZV</td><td>91.0</td><td>73.4</td><td>66.1</td><td>69.2</td></tr>
-            <tr><td>siMLPe</td><td>61.7</td><td>53.6</td><td>51.3</td><td>56.5</td></tr>
-            <tr><td>InteRACT</td><td>60.6</td><td>50.1</td><td>42.9</td><td>50.7</td></tr>
-            <tr><td><span class="tag">Ours</span></td><td><b>55.8</b></td><td><b>49.4</b></td><td><b>41.9</b></td><td><b>48.5</b></td></tr>
+            <tr>
+              <td>ZV</td>
+              <td>91.0</td>
+              <td>73.4</td>
+              <td>66.1</td>
+              <td>69.2</td>
+            </tr>
+            <tr>
+              <td>siMLPe</td>
+              <td>61.7</td>
+              <td>53.6</td>
+              <td>51.3</td>
+              <td>56.5</td>
+            </tr>
+            <tr>
+              <td>InteRACT</td>
+              <td>60.6</td>
+              <td>50.1</td>
+              <td>42.9</td>
+              <td>50.7</td>
+            </tr>
+            <tr>
+              <td><span class="tag">Ours</span></td>
+              <td><b>55.8</b></td>
+              <td><b>49.4</b></td>
+              <td><b>41.9</b></td>
+              <td><b>48.5</b></td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -401,34 +600,186 @@
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th colspan="13">H–H MPJPE (mm) across horizons</th></tr>
             <tr>
-              <th>Frames</th><th colspan="3">Reactive</th><th colspan="3">Handover</th><th colspan="3">Table Setting</th><th colspan="3">All</th>
+              <th colspan="13">H–H MPJPE (mm) across horizons</th>
             </tr>
-            <tr><th></th><th>5</th><th>10</th><th>15</th><th>5</th><th>10</th><th>15</th><th>5</th><th>10</th><th>15</th><th>5</th><th>10</th><th>15</th></tr>
+            <tr>
+              <th>Frames</th>
+              <th colspan="3">Reactive</th>
+              <th colspan="3">Handover</th>
+              <th colspan="3">Table Setting</th>
+              <th colspan="3">All</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>5</th>
+              <th>10</th>
+              <th>15</th>
+              <th>5</th>
+              <th>10</th>
+              <th>15</th>
+              <th>5</th>
+              <th>10</th>
+              <th>15</th>
+              <th>5</th>
+              <th>10</th>
+              <th>15</th>
+            </tr>
           </thead>
           <tbody>
-            <tr><td>ZV</td><td>28.6</td><td>44.0</td><td>53.9</td><td>25.5</td><td>40.6</td><td>51.8</td><td>36.5</td><td>61.0</td><td>80.6</td><td>28.4</td><td>45.1</td><td>57.0</td></tr>
-            <tr><td>siMLPe</td><td>11.5</td><td>22.0</td><td>30.2</td><td>11.1</td><td>22.3</td><td>31.5</td><td>17.3</td><td>37.1</td><td>54.8</td><td>12.2</td><td>24.4</td><td>34.6</td></tr>
-            <tr><td>InteRACT</td><td>11.6</td><td>22.3</td><td>30.5</td><td>13.5</td><td>25.1</td><td>34.9</td><td>19.1</td><td>39.4</td><td>57.7</td><td>13.3</td><td>26.2</td><td>37.1</td></tr>
-            <tr><td><span class="tag">Ours</span></td><td><b>10.7</b></td><td><b>20.3</b></td><td><b>28.2</b></td><td><b>10.5</b></td><td><b>20.8</b></td><td><b>29.2</b></td><td><b>16.6</b></td><td><b>35.8</b></td><td><b>52.9</b></td><td><b>11.6</b></td><td><b>22.9</b></td><td><b>32.4</b></td></tr>
+            <tr>
+              <td>ZV</td>
+              <td>28.6</td>
+              <td>44.0</td>
+              <td>53.9</td>
+              <td>25.5</td>
+              <td>40.6</td>
+              <td>51.8</td>
+              <td>36.5</td>
+              <td>61.0</td>
+              <td>80.6</td>
+              <td>28.4</td>
+              <td>45.1</td>
+              <td>57.0</td>
+            </tr>
+            <tr>
+              <td>siMLPe</td>
+              <td>11.5</td>
+              <td>22.0</td>
+              <td>30.2</td>
+              <td>11.1</td>
+              <td>22.3</td>
+              <td>31.5</td>
+              <td>17.3</td>
+              <td>37.1</td>
+              <td>54.8</td>
+              <td>12.2</td>
+              <td>24.4</td>
+              <td>34.6</td>
+            </tr>
+            <tr>
+              <td>InteRACT</td>
+              <td>11.6</td>
+              <td>22.3</td>
+              <td>30.5</td>
+              <td>13.5</td>
+              <td>25.1</td>
+              <td>34.9</td>
+              <td>19.1</td>
+              <td>39.4</td>
+              <td>57.7</td>
+              <td>13.3</td>
+              <td>26.2</td>
+              <td>37.1</td>
+            </tr>
+            <tr>
+              <td><span class="tag">Ours</span></td>
+              <td><b>10.7</b></td>
+              <td><b>20.3</b></td>
+              <td><b>28.2</b></td>
+              <td><b>10.5</b></td>
+              <td><b>20.8</b></td>
+              <td><b>29.2</b></td>
+              <td><b>16.6</b></td>
+              <td><b>35.8</b></td>
+              <td><b>52.9</b></td>
+              <td><b>11.6</b></td>
+              <td><b>22.9</b></td>
+              <td><b>32.4</b></td>
+            </tr>
           </tbody>
         </table>
       </div>
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th colspan="13">H–R MPJPE (mm) across horizons</th></tr>
             <tr>
-              <th>Frames</th><th colspan="3">Cabinet</th><th colspan="3">Cart</th><th colspan="3">Tabletop</th><th colspan="3">All</th>
+              <th colspan="13">H–R MPJPE (mm) across horizons</th>
             </tr>
-            <tr><th></th><th>5</th><th>10</th><th>15</th><th>5</th><th>10</th><th>15</th><th>5</th><th>10</th><th>15</th><th>5</th><th>10</th><th>15</th></tr>
+            <tr>
+              <th>Frames</th>
+              <th colspan="3">Cabinet</th>
+              <th colspan="3">Cart</th>
+              <th colspan="3">Tabletop</th>
+              <th colspan="3">All</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>5</th>
+              <th>10</th>
+              <th>15</th>
+              <th>5</th>
+              <th>10</th>
+              <th>15</th>
+              <th>5</th>
+              <th>10</th>
+              <th>15</th>
+              <th>5</th>
+              <th>10</th>
+              <th>15</th>
+            </tr>
           </thead>
           <tbody>
-            <tr><td>ZV</td><td>25.7</td><td>42.1</td><td>55.6</td><td>22.5</td><td>35.7</td><td>46.2</td><td>20.3</td><td>32.2</td><td>41.7</td><td>22.7</td><td>36.2</td><td>47.2</td></tr>
-            <tr><td>siMLPe</td><td>18.6</td><td>29.9</td><td>39.0</td><td>17.6</td><td>26.9</td><td>34.3</td><td>15.9</td><td>24.8</td><td>32.1</td><td>17.4</td><td>27.0</td><td>34.8</td></tr>
-            <tr><td>InteRACT</td><td>17.9</td><td>29.5</td><td>38.5</td><td>16.2</td><td>25.4</td><td>33.5</td><td>13.9</td><td>22.0</td><td>28.8</td><td>15.9</td><td>25.6</td><td>33.6</td></tr>
-            <tr><td><span class="tag">Ours</span></td><td><b>15.5</b></td><td><b>25.5</b></td><td><b>34.4</b></td><td><b>15.8</b></td><td><b>25.2</b></td><td><b>33.0</b></td><td><b>13.6</b></td><td><b>21.5</b></td><td><b>28.0</b></td><td><b>15.1</b></td><td><b>24.2</b></td><td><b>32.0</b></td></tr>
+            <tr>
+              <td>ZV</td>
+              <td>25.7</td>
+              <td>42.1</td>
+              <td>55.6</td>
+              <td>22.5</td>
+              <td>35.7</td>
+              <td>46.2</td>
+              <td>20.3</td>
+              <td>32.2</td>
+              <td>41.7</td>
+              <td>22.7</td>
+              <td>36.2</td>
+              <td>47.2</td>
+            </tr>
+            <tr>
+              <td>siMLPe</td>
+              <td>18.6</td>
+              <td>29.9</td>
+              <td>39.0</td>
+              <td>17.6</td>
+              <td>26.9</td>
+              <td>34.3</td>
+              <td>15.9</td>
+              <td>24.8</td>
+              <td>32.1</td>
+              <td>17.4</td>
+              <td>27.0</td>
+              <td>34.8</td>
+            </tr>
+            <tr>
+              <td>InteRACT</td>
+              <td>17.9</td>
+              <td>29.5</td>
+              <td>38.5</td>
+              <td>16.2</td>
+              <td>25.4</td>
+              <td>33.5</td>
+              <td>13.9</td>
+              <td>22.0</td>
+              <td>28.8</td>
+              <td>15.9</td>
+              <td>25.6</td>
+              <td>33.6</td>
+            </tr>
+            <tr>
+              <td><span class="tag">Ours</span></td>
+              <td><b>15.5</b></td>
+              <td><b>25.5</b></td>
+              <td><b>34.4</b></td>
+              <td><b>15.8</b></td>
+              <td><b>25.2</b></td>
+              <td><b>33.0</b></td>
+              <td><b>13.6</b></td>
+              <td><b>21.5</b></td>
+              <td><b>28.0</b></td>
+              <td><b>15.1</b></td>
+              <td><b>24.2</b></td>
+              <td><b>32.0</b></td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -439,10 +790,12 @@
     <h2>Qualitative Behavior</h2>
     <div class="card">
       <img src="assets/img/show.png" alt="Qualitative comparison figure">
-      <p class="caption">Cabinet scenario: predictions remain stable across 50–200 ms horizons, aligning with ground-truth and preserving coordination with the robot arm.</p>
+      <p class="caption">Cabinet scenario: predictions remain stable across 50–200 ms horizons, aligning with
+        ground-truth and preserving coordination with the robot arm.</p>
     </div>
     <div class="card" style="margin-top:16px;">
-      <video src="assets/video/hr_overlay_grid.mp4" controls playsinline style="width:100%; border-radius:10px;"></video>
+      <video src="assets/video/hr_overlay_grid.mp4" controls playsinline
+        style="width:100%; border-radius:10px;"></video>
       <p class="caption">Overlayed qualitative rollout video showing human and robot trajectories across time.</p>
     </div>
   </section>
@@ -456,14 +809,17 @@
       </div>
       <div class="card">
         <video src="assets/video/IMG_0269.MOV" controls playsinline style="width:100%; border-radius:10px;"></video>
-        <p class="caption">Robot selects complementary pieces based on predicted human intent, completing cooperative placement without collisions.</p>
+        <p class="caption">Robot selects complementary pieces based on predicted human intent, completing cooperative
+          placement without collisions.</p>
       </div>
     </div>
   </section>
 
   <section id="conclusion" class="section">
     <h2>Conclusion</h2>
-    <p class="highlight">Jointly modeling human biomechanics, robot context, and task semantics yields accurate, intention-aware motion forecasts. Our approach improves safety and efficiency in collaborative manipulation and runs in real time.</p>
+    <p class="highlight">Jointly modeling human biomechanics, robot context, and task semantics yields accurate,
+      intention-aware motion forecasts. Our approach improves safety and efficiency in collaborative manipulation and
+      runs in real time.</p>
     <div class="chips">
       <span class="chip">Future: multi-human collaboration</span>
       <span class="chip">Uncertainty-aware safety</span>
@@ -476,9 +832,5 @@
     <div>Contact: zsh123456@mail.ustc.edu.cn</div>
   </footer>
 </body>
+
 </html>
-
-
-
-
-
