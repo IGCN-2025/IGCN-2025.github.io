@@ -118,6 +118,16 @@
       font-weight: 600;
       font-size: 13px;
     }
+    .fade-up, .animated-card {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.8s ease forwards;
+      animation-delay: var(--d, 0s);
+    }
+    .animated-card { animation-duration: 0.7s; }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     .hero h1 {
       margin: 10px 0 8px;
@@ -375,7 +385,7 @@
   </header>
 
   <section class="hero">
-    <div>
+    <div class="fade-up" style="--d:0s;">
       <div class="badge-row">
         <span class="badge">Human–Robot Collaboration</span>
         <span class="badge">Motion Prediction</span>
@@ -405,7 +415,7 @@
         </div>
       </div>
     </div>
-    <div class="hero-panel">
+    <div class="hero-panel fade-up" style="--d:0.15s;">
       <img src="assets/img/overview.png" alt="Model overview diagram">
       <p class="caption">Pipeline: intention prediction, human/robot GCN backbones, geometry-aware relations, and dual
         cross-attention for future pose synthesis.</p>
@@ -432,7 +442,7 @@
   <section class="section">
     <h2>Key Contributions</h2>
     <div class="grid two-col">
-      <div class="card">
+      <div class="card animated-card" style="--d:0.05s;">
         <h3>Hydrodynamic intention field</h3>
         <p>Hand motion generates a velocity field; candidate objects accumulate responses to yield soft intention
           scores, delivering continuous, interpretable cues.</p>
@@ -441,14 +451,14 @@
           $$v_P = \sum_t \Delta v_t \, \gamma^{T-t}, \quad s_{P_i} = \mathrm{softmax}(v_{P_i})$$
         </div>
       </div>
-      <div class="card">
+      <div class="card animated-card" style="--d:0.1s;">
         <h3>Residual GCNs for human & robot</h3>
         <p>Spatial-temporal graphs with natural, symmetric, and self connections (humans) and kinematic chains (robots)
           capture articulated motion with residual stacking.</p>
         <img src="assets/img/gcn.png" alt="Residual GCN architecture">
         <p class="caption">Stacked graph convolution modules with an MLP head align input/output horizons.</p>
       </div>
-      <div class="card">
+      <div class="card animated-card" style="--d:0.15s;">
         <h3>Geometry-aware attention bias</h3>
         <p>Relative displacement, distance, and inverse-distance features feed an MLP to bias cross-attention, enforcing
           proximity-aware focus between agents.</p>
@@ -457,7 +467,7 @@
           $$B_{(t,j),(t',k)} = b_{t,j} \cdot \mathbb{1}(t = t')$$
         </div>
       </div>
-      <div class="card">
+      <div class="card animated-card" style="--d:0.2s;">
         <h3>Intention & Human–Robot cross-attention</h3>
         <p>Human tokens attend to object tokens to inject goal semantics; a second cross-attention fuses intention-aware
           human and robot features using the learned bias.</p>
@@ -470,26 +480,26 @@
   <section id="method" class="section">
     <h2>Method at a Glance</h2>
     <div class="grid two-col">
-      <div class="card">
+      <div class="card animated-card" style="--d:0.05s;">
         <h3>1) Intention prediction</h3>
         <p>Compute hydrodynamic responses from hand trajectories to candidate objects; produce <em>m×4</em> tensors (x,
           y, z, score) describing object relevance.</p>
         <img src="assets/img/flow1.png" alt="Hydrodynamic intention illustration">
         <p class="caption">Targets aligned with hand velocity gain stronger responses.</p>
       </div>
-      <div class="card">
+      <div class="card animated-card" style="--d:0.1s;">
         <h3>2) Human / Robot encoders</h3>
         <p>Residual GCNs process historical poses (human) and kinematic states (robot), retaining spatial topology
           across time.</p>
         <img src="assets/img/overview.png" alt="Pipeline figure">
         <p class="caption">Encoders feed relation-aware cross-attention for future pose decoding.</p>
       </div>
-      <div class="card">
+      <div class="card animated-card" style="--d:0.15s;">
         <h3>3) Geometry-aware relation module</h3>
         <p>Construct per-time-step attention biases from human–robot displacement features to reflect physical
           constraints and collision risk.</p>
       </div>
-      <div class="card">
+      <div class="card animated-card" style="--d:0.2s;">
         <h3>4) Decoder & Losses</h3>
         <p>Cross-attend intention-aware human tokens with robot tokens, then regress future poses. Loss blends MPJPE,
           short-horizon emphasis, and limb-length regularization.</p>
